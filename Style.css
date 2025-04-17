@@ -1,21 +1,22 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
-    overflow-y: hidden; /* Hide vertical scrollbar */
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-  }
+    overflow: hidden; 
+}
 
 .Nav-bar {
     display: flex;
-    width: minmax(10%,20%);
+    flex-direction: column;
+    width: 20%;
+    min-width: 200px;
     height: 100vh;
     font-size: 36px;
     font-weight: bold;
-    flex-direction: column;
     padding: 20px;
     background-color: #1682D4;
     color: white;
@@ -25,7 +26,6 @@ body {
     padding: 10px;
 }
 
-
 ul > div {
     margin-top: 30px;
     margin-left: 30px;
@@ -33,7 +33,7 @@ ul > div {
 
 .Right-Side {
     display: flex;
-    width: 100%;
+    width: 80%;
     height: 100vh;
 }
 
@@ -43,6 +43,7 @@ ul > div {
 
 .Top-header {
     display: flex;
+    flex-direction: column;
     background-color: aliceblue;
     width: 100%;
     height: 20vh;
@@ -50,43 +51,119 @@ ul > div {
 
 .SeachBar_And_UserProfile {
     display: flex;
-    flex-direction: row;
+    gap: 20px;
     width: 100%;
     height: 40%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
 }
 
 .Search_bar_Section {
+    display: flex;
+    gap: 10px;
     width: 75%;
-    padding-left: 100px;
 }
 
 .SearchBar {
-    width: 75%;
+    width: 100%;
     height: 35px;
     background-color: #E5EAF2;
     border-radius: 30px;
+    border: none;
+    padding: 0 15px;
 }
-
 
 .Bottom-Ul {
     margin-top: 20px;
 }
 
 .Profile_Picture {
-    border-radius: 70px;
-    width: 80px;
+    border-radius: 50%;
+    width: 75px; 
+    height: 75px; 
+    overflow: hidden;
 }
 
-.Name {
-    text-align: center;
-    width: 200px;
-    height: 60px;
-    padding-top: 30px;
+.Profile_Picture #Big_Profile {
+    width: 75px; 
+    height: 75px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+}
+
+.Profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
     font-size: 24px;
     font-weight: bold;
 }
 
 .UserProfile {
     display: flex;
-    gap: 10px ;
+    align-items: center;
+    gap: 20px;
+    width: 25%;
+    min-width: 200px;
+}
+
+.BigProfile_Button {
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    height: 100%;
+    gap: 1000px  ;
+}
+
+.Profile_Name {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 25px; 
+    align-items: center; 
+}
+
+.FullName_Tag {
+    font-weight: bold;
+}
+
+.Welcome_Text {
+    margin-top: 4px;
+    color: #666;
+}
+
+.ButtonPart {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding-right: 40px;
+}
+
+.Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    height: 45px;
+    border-radius: 30px;
+    background-color: #1682D4;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.Button:hover {
+    background-color: #0f6bbf;
+}
+
+img {
+    width: 32px;  
+    height: 32px;
 }
