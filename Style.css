@@ -6,8 +6,17 @@
 }
 
 body {
-    overflow: hidden; 
+    overflow: hidden;
 }
+
+
+.Wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+}
+
 
 .Nav-bar {
     display: flex;
@@ -15,7 +24,7 @@ body {
     width: 20%;
     min-width: 200px;
     height: 100vh;
-    font-size: 36px;
+    font-size: 2rem;
     font-weight: bold;
     padding: 20px;
     background-color: #1682D4;
@@ -31,14 +40,17 @@ ul > div {
     margin-left: 30px;
 }
 
-.Right-Side {
-    display: flex;
-    width: 80%;
-    height: 100vh;
+ul > div:hover {
+    text-decoration: underline;
 }
 
-.Wrapper {
+
+.Right-Side {
     display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 .Top-header {
@@ -47,22 +59,25 @@ ul > div {
     background-color: aliceblue;
     width: 100%;
     height: 20vh;
+    min-height: 120px;
 }
 
 .SeachBar_And_UserProfile {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     width: 100%;
-    height: 40%;
+    height: auto;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 20px 40px;
 }
 
 .Search_bar_Section {
     display: flex;
     gap: 10px;
-    width: 75%;
+    flex: 1;
+    min-width: 200px;
 }
 
 .SearchBar {
@@ -74,55 +89,56 @@ ul > div {
     padding: 0 15px;
 }
 
-.Bottom-Ul {
-    margin-top: 20px;
-}
-
-.Profile_Picture {
-    border-radius: 50%;
-    width: 75px; 
-    height: 75px; 
-    overflow: hidden;
-}
-
-.Profile_Picture #Big_Profile {
-    width: 75px; 
-    height: 75px; 
-    object-fit: cover; 
-    border-radius: 50%; 
-}
-
-.Profile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; 
-    font-size: 24px;
-    font-weight: bold;
-}
-
+/* Profile Section */
 .UserProfile {
     display: flex;
     align-items: center;
     gap: 20px;
     width: 25%;
     min-width: 200px;
+    flex-shrink: 0;
+}
+
+
+.Profile_Picture {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+}
+
+.Profile_Picture #Big_Profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.Profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 350px;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .BigProfile_Button {
     display: flex;
     align-items: center;
-    padding-left: 40px;
+    margin-left: 20px;
     height: 100%;
-    gap: 1000px  ;
 }
 
 .Profile_Name {
     display: flex;
     flex-direction: row;
-    gap: 30px;
-    font-size: 25px; 
-    align-items: center; 
+    gap: 15px;
+    font-size: 1.7rem;
+    align-items: center;
+    width: 70%;
+    height: 100%;
 }
 
 .FullName_Tag {
@@ -134,12 +150,14 @@ ul > div {
     color: #666;
 }
 
+
 .ButtonPart {
     display: flex;
     gap: 20px;
     align-items: center;
     justify-content: center;
     padding-right: 40px;
+    flex-wrap: wrap;
 }
 
 .Button {
@@ -151,7 +169,7 @@ ul > div {
     border-radius: 30px;
     background-color: #1682D4;
     color: white;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     border: none;
     cursor: pointer;
@@ -163,7 +181,251 @@ ul > div {
     background-color: #0f6bbf;
 }
 
+
 img {
-    width: 32px;  
-    height: 32px;
+    width: 26px;
 }
+
+
+.Bottom-Ul {
+    margin-top: 20px;
+}
+
+.Home, .Profile_Nav, .Messages , .History , .Communities , .Settings , .Support , .Privacy{
+    display: flex;
+    gap: 20px;
+    width: 200px;
+    color: white;
+}
+
+.Side-bar-icon {
+    width: 32px;
+    filter: brightness(0) invert(1);
+} 
+
+.Dashboard {
+    display: grid;
+    width: 100%;
+    height: 80vh;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr);     
+}
+
+.Dash-board {
+    grid-column: 1 / 3; 
+    grid-row: 1 / 4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    flex-grow: 1;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: whitesmoke;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    padding: 40px;
+    font-size: 1.2rem;
+}
+
+.Content-text {
+    color: gray;
+}
+
+.Icon-part {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap : 20px;
+}
+
+.Announcements {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    grid-row: 1 / 3;
+    gap: 10px;
+}
+
+.Announcements-Board {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1.1rem;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.Announcements-Board > div {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.Trending {
+    padding: 20px;
+    background-color: #eaf0f6;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    margin: 20px;
+  }
+  
+  .Trending h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .Trending-Card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .Trending-Item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .Trending-Icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .Username {
+    font-weight: bold;
+    color: black;
+  }
+  
+  .Project-Name {
+    color: gray;
+  }
+  
+
+
+/* tablets */
+@media (max-width: 1024px) {
+    .Wrapper {
+      flex-direction: column;
+    }
+  
+    .Nav-bar {
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      overflow-x: auto;
+      padding: 10px;
+      font-size: 1.2rem;
+    }
+  
+    .Right-Side {
+      height: auto;
+    }
+  
+    .Dashboard {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      height: auto;
+    }
+  
+    .Dash-board {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  
+    .card-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  
+    .Announcements,
+    .Trending {
+      grid-row: auto;
+      margin: 10px 20px;
+    }
+  
+    .UserProfile {
+      width: 100%;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  
+    .Search_bar_Section {
+      flex: 1 1 100%;
+    }
+  
+    .Profile {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .Profile_Name {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .ButtonPart {
+      justify-content: center;
+    }
+  }
+  
+  /*phones */
+  @media (max-width: 600px) {
+    .Nav-bar {
+      flex-direction: column;
+      align-items: center;
+      font-size: 1rem;
+    }
+  
+    .Dashboard {
+      padding: 10px;
+    }
+  
+    .card {
+      padding: 20px;
+      font-size: 1rem;
+    }
+  
+    .Top-header {
+      height: auto;
+    }
+  
+    .SeachBar_And_UserProfile {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+      padding: 10px;
+    }
+  
+    .Button {
+      width: 100%;
+    }
+  
+    .Trending-Item {
+      gap: 10px;
+    }
+  
+    .Trending-Icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
